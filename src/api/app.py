@@ -24,8 +24,16 @@ class InputData(BaseModel):
 def root():
     return {"message": "⚡ Ready to predict power demand"}
 
+# app.py
+FEATURES = ["hour", "temperature", "is_weekend", "is_holiday"]
+
 @app.post("/predict")
-def predict(data: InputData):
-    df = pd.DataFrame([data.dict()])
+def predict(input_data: InputData):
+    data = input_data.dict()
+    df = pd.DataFrame([data])
+
+    # Filtra solo las columnas necesarias
+    df = df[FEATURES]
+
     prediction = model.predict(df)[0]
-    return {"predicted_load_MW": round(prediction, 2)}
+    return {"prediction": prediction}
