@@ -1,0 +1,9 @@
+entsoe-py
+pandas
+prefect
+dask[complete]
+duckdb
+streamlit
+dash
+fastapi
+uvicorn[standard]
