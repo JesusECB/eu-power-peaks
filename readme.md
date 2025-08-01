@@ -1,5 +1,24 @@
 # ⚡ Forecasting Power Consumption Peaks in Europe
 
+Full-stack ML system for real-time energy demand forecasting across 20+ European countries.
+
+This project combines data engineering, predictive modeling, and backend API development:
+
+    🔁 ETL pipeline with Prefect 2, collecting hourly demand data via the ENTSO-E API.
+
+    🌦️ Enriched with temperature and calendar features (weekends, holidays).
+
+    🤖 LightGBM regression model trained to predict short-term consumption peaks.
+
+    🧠 FastAPI-powered REST API serving real-time predictions.
+
+    🗃️ Data stored in Parquet format, organized by country and month.
+
+    🧪 Fully testable, modular, and production-ready architecture.
+
+    Tech Stack: Python, Prefect, DuckDB, FastAPI, LightGBM, Pandas, Docker.
+
+
 > **Elevator pitch**: Predict and alert hourly demand peaks across 30+ European countries using open datasets (ENTSO‑E, OPSD, Ember) combined with weather variables and LSTM/GBM models. Includes a full ETL pipeline, interactive dashboard, and REST API.
 
 ---
